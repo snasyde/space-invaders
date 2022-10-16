@@ -14,11 +14,11 @@ Hello, I'm Snasy, a Python developer. I programmed this game and I want to prese
 
 # How to control the spaceship
 
-LEFT: Go left
+LEFT: Moves left
 
-RIGHT: Go right
+RIGHT: Moves right
 
 
 SPACE: Shoots a bullet
 
-UP: Pause the game
+UP: Pauses the game
