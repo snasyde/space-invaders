@@ -2,10 +2,12 @@ import pygame
 import random
 import math
 
+version = 'v1.1'
 
 class Game:
     def __init__(self, title, widght, height, framerate):
         pygame.init()
+        print(f'snasy/space-invaders {version}')
 
         self.running = True
         self.spaceship = Spaceship(self, 370, 515)
