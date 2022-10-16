@@ -5,7 +5,7 @@ Hello, I'm Snasy, a Python developer. I programmed this game and I want to prese
 # How to play
 
 1. You need to download the following files
-> start.bat, main.py & the images Folder
+> start.bat, main.py, highscore.txt & the images Folder
 
 2. Start the start.bat file
 
