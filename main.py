@@ -7,7 +7,7 @@ version = 'v1.1'
 class Game:
     def __init__(self, title, widght, height, framerate):
         pygame.init()
-        print(f'snasyy/space-invaders {version}')
+        print(f'snasyde/space-invaders {version}')
 
         self.running = True
         self.spaceship = Spaceship(self, 370, 515)
