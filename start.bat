@@ -1,3 +1,3 @@
-python3 -m pip install pygame
+python -m pip install pygame
 cls
-python3 ./main.py
+python ./main.py

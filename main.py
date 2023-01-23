@@ -1,13 +1,14 @@
 import pygame
 import random
 import math
-
-version = 'v1.1'
+import json
+import os
 
 class Game:
     def __init__(self, title, widght, height, framerate):
-        pygame.init()
-        print(f'snasyy/space-invaders {version}')
+        # Load the Config file
+        self.CONFIG = json.load(
+            open(os.path.join(os.path.dirname(__file__), "config.json")))
 
         self.running = True
         self.spaceship = Spaceship(self, 370, 515)
@@ -15,6 +16,10 @@ class Game:
         self.is_break = False
         self.enemy_check = True
         self.enemy_collision = True
+        self.version = self.CONFIG['version']
+
+        pygame.init()
+        print(f'snasyde/space-invaders {self.version}')
 
         self.enemies = []
         for i in range(12):
@@ -157,15 +162,13 @@ class Game:
         self.screen.blit(score_text, (8, 8))
 
     def print_highscore(self):
-        highscore_file = open("highscore.txt", "r")
-        highscore = int(highscore_file.read())
+        highscore = self.CONFIG['highscore']
 
         if highscore < self.score:
-            highscore_set = open("highscore.txt", "w")
-            highscore_set.write(str(self.score))
-            highscore_set.close()
+            self.CONFIG['highscore'] = self.score
 
-        highscore_file.close()
+        with open("config.json", 'w') as f:
+            json.dump(self.CONFIG, f)
 
         highscore_font = pygame.font.Font("freesansbold.ttf", 24)
         highscore_text = highscore_font.render("Highscore: " + str(highscore), True, (250, 250, 250))
